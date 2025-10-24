@@ -13,16 +13,16 @@ export default function Home() {
       <SiteHeader />
 
       <main className="flex-1">
-        <SectionWrapper sectionKey="hero" variant="full" className="bg-gradient-to-b from-background to-muted/30">
+        <SectionWrapper sectionKey="hero" variant="card" className="bg-gradient-to-b from-background to-muted/30">
           {(data) => (
-            <div className="max-w-5xl mx-auto text-center space-y-12 px-4">
+            <div className="text-center space-y-12">
               <MarkdownRenderer content={data.content_md} className="text-center" />
               <VideoEmbed videoUrl="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LlfgIntro-I6MtUHFKBm5DBu7TwnIICkAZ5Cz3V4.mp4" className="max-w-4xl mx-auto" />
             </div>
           )}
         </SectionWrapper>
 
-        <SectionWrapper sectionKey="problem" variant="section" className="bg-muted/20">
+        <SectionWrapper sectionKey="problem" variant="card" className="bg-muted/50">
           {(data) => (
             <div className="max-w-4xl mx-auto px-4">
               <MarkdownRenderer content={data.content_md} />
@@ -30,7 +30,7 @@ export default function Home() {
           )}
         </SectionWrapper>
 
-        <SectionWrapper sectionKey="solution" variant="section">
+        <SectionWrapper sectionKey="solution" variant="card" className="bg-background">
           {(data) => (
             <div className="max-w-4xl mx-auto px-4">
               <MarkdownRenderer content={data.content_md} />
@@ -38,11 +38,11 @@ export default function Home() {
           )}
         </SectionWrapper>
 
-        <SectionWrapper sectionKey="trust" variant="card" className="bg-muted/10">
+        <SectionWrapper sectionKey="trust" variant="card" className="bg-muted/50">
           {(data) => <MarkdownRenderer content={data.content_md} />}
         </SectionWrapper>
 
-        <SectionWrapper sectionKey="pastors_ask" variant="card-emphasized">
+        <SectionWrapper sectionKey="pastors_ask" variant="card-emphasized" className="bg-background">
           {(data) => (
             <div className="text-center space-y-8 relative z-10">
               <MarkdownRenderer content={data.content_md} className="text-center" />
@@ -50,7 +50,7 @@ export default function Home() {
           )}
         </SectionWrapper>
 
-        <SectionWrapper sectionKey="pastors_next_steps" variant="card" className="bg-muted/10">
+        <SectionWrapper sectionKey="pastors_next_steps" variant="card" className="bg-muted/50">
           {(data) => (
             <div className="space-y-10">
               <MarkdownRenderer content={data.content_md} />
