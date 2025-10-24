@@ -3,10 +3,6 @@ import { cookies } from "next/headers"
 import { env } from "@/lib/env"
 
 export async function getSupabaseServerClient() {
-  console.log("[v0] Creating Supabase server client...")
-  console.log("[v0] URL:", env.supabase.url ? "present" : "missing")
-  console.log("[v0] Anon Key:", env.supabase.anonKey ? "present" : "missing")
-
   const cookieStore = await cookies()
 
   const client = createServerClient(env.supabase.url, env.supabase.anonKey, {
@@ -26,6 +22,5 @@ export async function getSupabaseServerClient() {
     },
   })
 
-  console.log("[v0] Supabase server client created successfully")
   return client
 }

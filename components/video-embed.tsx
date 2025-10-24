@@ -1,13 +1,12 @@
 "use client"
 
 interface VideoEmbedProps {
-  videoId?: string
-  placeholder?: boolean
+  videoUrl?: string
   className?: string
 }
 
-export function VideoEmbed({ videoId, placeholder = true, className = "" }: VideoEmbedProps) {
-  if (placeholder || !videoId) {
+export function VideoEmbed({ videoUrl, className = "" }: VideoEmbedProps) {
+  if (!videoUrl) {
     return (
       <div className={`aspect-video bg-muted rounded-lg flex items-center justify-center ${className}`}>
         <div className="text-center">
@@ -24,16 +23,10 @@ export function VideoEmbed({ videoId, placeholder = true, className = "" }: Vide
 
   return (
     <div className={`aspect-video ${className}`}>
-      <iframe
-        width="100%"
-        height="100%"
-        src={`https://www.youtube.com/embed/${videoId}`}
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        className="rounded-lg"
-      />
+      <video width="100%" height="100%" controls className="rounded-lg w-full h-full object-cover">
+        <source src={videoUrl} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </div>
   )
 }
