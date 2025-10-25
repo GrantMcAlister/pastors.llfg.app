@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/site-footer"
 import { SectionWrapper } from "@/components/section-wrapper"
 import { VideoEmbed } from "@/components/video-embed"
 import { MarkdownRenderer } from "@/components/markdown-renderer"
+import Link from "next/link"
 
 export default function Home() {
   return (
@@ -18,8 +19,8 @@ export default function Home() {
           className="bg-gradient-to-br from-primary/20 via-background to-primary/10"
         >
           {(data) => (
-            <div className="text-center space-y-12">
-              <MarkdownRenderer content={data.content_md} className="text-center" />
+            <div className="space-y-12">
+              <MarkdownRenderer content={data.content_md} />
               <VideoEmbed videoUrl="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LlfgIntro-I6MtUHFKBm5DBu7TwnIICkAZ5Cz3V4.mp4" className="max-w-4xl mx-auto" />
             </div>
           )}
@@ -34,7 +35,19 @@ export default function Home() {
         </SectionWrapper>
 
         <SectionWrapper sectionKey="solution" variant="card" className="bg-gradient-to-br from-accent/15 to-accent/5">
-          {(data) => <MarkdownRenderer content={data.content_md} />}
+          {(data) => (
+            <div className="space-y-6">
+              <MarkdownRenderer content={data.content_md} />
+              <div className="pt-4">
+                <Link
+                  href="/sample"
+                  className="inline-flex items-center text-primary hover:text-primary/80 font-medium hover:underline transition-colors"
+                >
+                  View a Sample Love Letter from God →
+                </Link>
+              </div>
+            </div>
+          )}
         </SectionWrapper>
 
         <SectionWrapper sectionKey="trust" variant="card" className="bg-gradient-to-br from-sky/15 to-sky/5">
@@ -47,8 +60,8 @@ export default function Home() {
           className="bg-gradient-to-br from-primary/15 via-secondary/10 to-accent/10"
         >
           {(data) => (
-            <div className="text-center space-y-8 relative z-10">
-              <MarkdownRenderer content={data.content_md} className="text-center" />
+            <div className="space-y-8 relative z-10">
+              <MarkdownRenderer content={data.content_md} />
             </div>
           )}
         </SectionWrapper>
