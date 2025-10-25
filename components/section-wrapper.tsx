@@ -43,9 +43,9 @@ export function SectionWrapper({ sectionKey, variant = "section", className = ""
 
   const getContainerClasses = () => {
     if (variant === "card" || variant === "card-emphasized") {
-      return "container max-w-4xl mx-auto px-4"
+      return "max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
     }
-    return "container px-4"
+    return "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
   }
 
   const getCardClasses = () => {
