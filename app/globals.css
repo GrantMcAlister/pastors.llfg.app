@@ -164,4 +164,17 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Add midnight blue gradient background for dark mode */
+  .dark body {
+    background: linear-gradient(
+      135deg,
+      oklch(0.15 0.04 250) 0% /* deep midnight blue */,
+      oklch(0.18 0.03 260) 25% /* darker blue */,
+      oklch(0.16 0.04 245) 50% /* rich midnight */,
+      oklch(0.19 0.03 255) 75% /* subtle variation */,
+      oklch(0.17 0.04 250) 100% /* back to midnight */
+    );
+    background-attachment: fixed;
+  }
 }

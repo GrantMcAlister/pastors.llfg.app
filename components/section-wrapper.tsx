@@ -60,7 +60,7 @@ export function SectionWrapper({ sectionKey, variant = "section", className = ""
 
   if (loading) {
     return (
-      <section className={`py-12 md:py-16 ${className}`}>
+      <section className={`py-4 md:py-8 ${className}`}>
         <div className={getContainerClasses()}>
           <div className={getCardClasses()}>
             <div className="animate-pulse space-y-6">
@@ -76,7 +76,7 @@ export function SectionWrapper({ sectionKey, variant = "section", className = ""
 
   if (error || !data) {
     return (
-      <section className={`py-12 md:py-16 ${className}`}>
+      <section className={`py-4 md:py-8 ${className}`}>
         <div className={getContainerClasses()}>
           <div className={getCardClasses()}>
             <p className="text-destructive">Error loading section: {error}</p>
@@ -88,7 +88,7 @@ export function SectionWrapper({ sectionKey, variant = "section", className = ""
 
   if (children) {
     return (
-      <section className={`py-12 md:py-16 ${className}`}>
+      <section className={`py-4 md:py-16 ${className}`}>
         <div className={getContainerClasses()}>
           {variant === "card" || variant === "card-emphasized" ? (
             <div className={getCardClasses()}>{children(data)}</div>
