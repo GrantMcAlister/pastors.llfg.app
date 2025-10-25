@@ -13,7 +13,11 @@ export default function Home() {
       <SiteHeader />
 
       <main className="flex-1">
-        <SectionWrapper sectionKey="hero" variant="card" className="bg-gradient-to-b from-background to-muted/30">
+        <SectionWrapper
+          sectionKey="hero"
+          variant="card"
+          className="bg-gradient-to-br from-primary/20 via-background to-primary/10"
+        >
           {(data) => (
             <div className="text-center space-y-12">
               <MarkdownRenderer content={data.content_md} className="text-center" />
@@ -22,7 +26,11 @@ export default function Home() {
           )}
         </SectionWrapper>
 
-        <SectionWrapper sectionKey="problem" variant="card" className="bg-muted/50">
+        <SectionWrapper
+          sectionKey="problem"
+          variant="card"
+          className="bg-gradient-to-br from-secondary/15 to-secondary/5"
+        >
           {(data) => (
             <div className="max-w-4xl mx-auto px-4">
               <MarkdownRenderer content={data.content_md} />
@@ -30,7 +38,7 @@ export default function Home() {
           )}
         </SectionWrapper>
 
-        <SectionWrapper sectionKey="solution" variant="card" className="bg-background">
+        <SectionWrapper sectionKey="solution" variant="card" className="bg-gradient-to-br from-accent/15 to-accent/5">
           {(data) => (
             <div className="max-w-4xl mx-auto px-4">
               <MarkdownRenderer content={data.content_md} />
@@ -38,11 +46,15 @@ export default function Home() {
           )}
         </SectionWrapper>
 
-        <SectionWrapper sectionKey="trust" variant="card" className="bg-muted/50">
+        <SectionWrapper sectionKey="trust" variant="card" className="bg-gradient-to-br from-sky/15 to-sky/5">
           {(data) => <MarkdownRenderer content={data.content_md} />}
         </SectionWrapper>
 
-        <SectionWrapper sectionKey="pastors_ask" variant="card-emphasized" className="bg-background">
+        <SectionWrapper
+          sectionKey="pastors_ask"
+          variant="card-emphasized"
+          className="bg-gradient-to-br from-primary/15 via-secondary/10 to-accent/10"
+        >
           {(data) => (
             <div className="text-center space-y-8 relative z-10">
               <MarkdownRenderer content={data.content_md} className="text-center" />
@@ -50,15 +62,16 @@ export default function Home() {
           )}
         </SectionWrapper>
 
-        <SectionWrapper sectionKey="pastors_next_steps" variant="card" className="bg-muted/50">
+        <SectionWrapper
+          sectionKey="pastors_next_steps"
+          variant="card"
+          className="bg-gradient-to-br from-primary/10 to-primary/5"
+        >
           {(data) => (
             <div className="space-y-10">
               <MarkdownRenderer content={data.content_md} />
               <div className="flex justify-center pt-4">
-                <Button
-                  size="lg"
-                  className="text-lg px-10 py-7 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                >
+                <Button size="lg" className="text-lg">
                   Schedule Feedback Session
                 </Button>
               </div>
